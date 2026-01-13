@@ -31,6 +31,28 @@
 };
 
 / {
+    /* Agregamos los alias que el widget RGBLED está buscando */
+    aliases {
+        led-red = &led0;
+        led-green = &led1;
+        led-blue = &led2;
+    };
+
+    /* Definimos los nodos de los LEDs para el nice_nano */
+    leds {
+        compatible = "gpio-leds";
+        led0: led_0 {
+            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+        };
+        led1: led_1 {
+            gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>;
+        };
+        led2: led_2 {
+            gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
+
     combos {
         compatible = "zmk,combos";
 
