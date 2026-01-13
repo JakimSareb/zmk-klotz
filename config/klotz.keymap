@@ -40,6 +40,12 @@
         transform = <&default_transform>;
         kscan = <&kscan0>;
     };    
+    /* Agregamos los alias exactos que el widget busca */
+    aliases {
+        led_red = &led0;
+        led_green = &led1;
+        led_blue = &led2;
+    };
     leds {
         compatible = "gpio-leds";
         led0: led_0 {
