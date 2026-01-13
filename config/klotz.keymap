@@ -37,16 +37,9 @@
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        transform = <&default_transform>; // Si este falla, probaremos con <&layout_transform>
+        transform = <&default_transform>;
         kscan = <&kscan0>;
-        /* Añadimos explícitamente las coordenadas para que el compilador no las busque en otro lado */
-        keys
-            = <&key_physical_attrs 0 0 0>
-            , <&key_physical_attrs 0 100 0>
-            // ... (ZMK debería inferir el resto, pero el assert falla si no detecta la unión)
-            ;
-    };
-
+    };    
     leds {
         compatible = "gpio-leds";
         led0: led_0 {
