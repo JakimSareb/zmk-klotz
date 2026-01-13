@@ -1,16 +1,14 @@
-//                                      █         ██        ▄▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀█
-//                                      █        █ █      ▄▀            ▀▄      █         █
-//                                      █       █  █    ▄▀                ▀▄    █        █
-//                                      █      █   █   █                    █   █       █
-//                                      █     █    █   █                    █   █      █
-//                                      █    █     █   █                    █   █  ▀▀▀█▀▀▀▀
-//                                      █   █ █    █   █                    █   █    █
-//                                      █  █   █   █   █                    █   █   █
-//                                      █ █     █  █    ▀▄                ▄▀    █  █
-//                                      ██       █ █      ▀▄            ▄▀      █ █
-//                                      █         ██▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▀        ██▄▄▄▄▄▄▄▄▄▄
-//
-// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+//                                      █         ██        ▄▀▀▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀█▀▀▀▀▀▀▀▀▀▀█
+//                                      █        █ █      ▄▀            ▀▄      █         █
+//                                      █       █  █    ▄▀                ▀▄    █        █
+//                                      █      █   █   █                    █   █       █
+//                                      █     █    █   █                    █   █      █
+//                                      █    █     █   █                    █   █  ▀▀▀█▀▀▀▀
+//                                      █   █ █    █   █                    █   █    █
+//                                      █  █   █   █   █                    █   █   █
+//                                      █ █     █  █    ▀▄                ▄▀    █  █
+//                                      ██       █ █      ▀▄            ▄▀      █ █
+//                                      █         ██▄▄▄▄▄▄▄▄█▄▄▄▄▄▄▄▄▄▄▀        ██▄▄▄▄▄▄▄▄▄▄
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -31,14 +29,13 @@
 };
 
 / {
-    /* Agregamos los alias que el widget RGBLED está buscando */
+    /* ALIASES Y LEDS */
     aliases {
         led-red = &led0;
         led-green = &led1;
         led-blue = &led2;
     };
 
-    /* Definimos los nodos de los LEDs para el nice_nano */
     leds {
         compatible = "gpio-leds";
         led0: led_0 {
@@ -51,8 +48,8 @@
             gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
         };
     };
-};
 
+    /* COMBOS */
     combos {
         compatible = "zmk,combos";
 
@@ -112,6 +109,7 @@
         };
     };
 
+    /* MACROS */
     macros {
         gif: gif {
             label = "giphy";
@@ -143,27 +141,12 @@
         };
     };
 
+    /* KEYMAP */
     keymap {
         compatible = "zmk,keymap";
 
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-
         base_layer {
-            // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-
             label = "BASE";
-
-            // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-            // ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-            // ┃     Q     ┃     W     ┃     F     ┃     P     ┃     G     ┃   ┃     J     ┃     L     ┃     U     ┃     Y     ┃     ;     ┃
-            // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            // ┃     A     ┃     R     ┃     S     ┃     T     ┃     D     ┃   ┃     H     ┃     N     ┃     E     ┃     I     ┃     O     ┃
-            // ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-            // ┃     Z     ┃     X     ┃     C     ┃     V     ┃     B     ┃   ┃     K     ┃     M     ┃     ,     ┃     .     ┃     /     ┃
-            // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-            //                                     ┃    TAB    ┃    SPC    ┃   ┃   ENTER   ┃   BSPC    ┃
-            //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┛
-
             bindings = <
 &kp Q      &kp W  &kp E  &kp R        &kp T      &kp Y      &kp U           &kp I  &kp O       &kp P
 &kp A      &kp S  &kp D  &kp F        &kp G      &kp H      &kp J           &kp K  &kp L       &kp SEMICOLON
@@ -176,10 +159,10 @@
 
         CONTROLS {
             bindings = <
-&kp PRINTSCREEN  &trans        &trans          &kp ESCAPE        &trans         &kp PAGE_UP        &kp HOME       &kp UP_ARROW  &kp END          &kp CAPSLOCK
+&kp PRINTSCREEN  &trans        &trans        &kp ESCAPE        &trans         &kp PAGE_UP        &kp HOME       &kp UP_ARROW  &kp END           &kp CAPSLOCK
 &kp LEFT_ALT     &kp LEFT_GUI  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp RIGHT_ALT  &kp PAGE_DOWN      &kp LEFT       &kp DOWN      &kp RIGHT_ARROW  &trans
-&trans           &trans        &trans          &kp TAB           &trans         &kp LC(BACKSPACE)  &kp BACKSPACE  &kp DELETE    &trans           &trans
-                                               &trans            &trans         &trans             &trans
+&trans           &trans        &trans        &kp TAB           &trans         &kp LC(BACKSPACE)  &kp BACKSPACE  &kp DELETE    &trans           &trans
+                                             &trans            &trans         &trans             &trans
             >;
         };
 
@@ -209,14 +192,16 @@
                                 &trans      &trans        &trans        &trans
             >;
         };
-	extra1 {
+
+        extra1 {
             status = "reserved";
         };
 
         extra2 {
             status = "reserved";
         };
-	extra3 {
+
+        extra3 {
             status = "reserved";
         };
 
