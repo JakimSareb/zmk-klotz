@@ -29,6 +29,18 @@
 };
 
 / {
+    /* CONFIGURACIÓN PARA ZMK STUDIO DE MATRIZ FISICA*/
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    /* Definición del diseño físico para que ZMK Studio sepa renderizar las teclas */
+    physical_layout0: physical_layout_0 {
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        transform = <&default_transform>; // Nombre estándar en Klotz
+        kscan = <&kscan0>;                // Nombre estándar en nice_nano/klotz
+    };
     /* ALIASES Y LEDS */
     aliases {
         led-red = &led0;
