@@ -41,7 +41,7 @@
         kscan = <&kscan0>;
     };    
     /* Agregamos los alias exactos que el widget busca */
-    aliases {
+/*    aliases {
         led-red = &led0;
         led-green = &led1;
         led-blue = &led2;
@@ -57,7 +57,7 @@
         led2: led_2 {
             gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
         };
-    };
+    }; */
 
     /* COMBOS */
     combos {
