@@ -28,13 +28,13 @@
     tapping-term-ms = <170>;
 };
 
+
 / {
-    /* CONFIGURACIÓN PARA ZMK STUDIO DE MATRIZ FISICA*/
+    /* CONFIGURACIÓN PARA ZMK STUDIO */
     chosen {
         zmk,physical-layout = &physical_layout0;
     };
 
-    /* Definimos el layout físico referenciando los nombres de tu .dtsi */
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
@@ -42,18 +42,7 @@
         kscan = <&kscan0>;
     };
 
-    leds {
-        compatible = "gpio-leds";
-        led0: led_0 {
-            gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
-        };
-        led1: led_1 {
-            gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>;
-        };
-        led2: led_2 {
-            gpios = <&gpio0 29 GPIO_ACTIVE_HIGH>;
-        };
-    }; */
+    /* Hemos eliminado el bloque de LEDs problemático para asegurar que compile */
 
     /* COMBOS */
     combos {
