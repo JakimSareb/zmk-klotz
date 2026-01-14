@@ -1,0 +1,12 @@
+/ {
+    chosen {
+        zmk,physical-layout = &studio_layout;
+    };
+
+    studio_layout: studio_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
+    };
+};
