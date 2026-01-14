@@ -34,18 +34,14 @@
         zmk,physical-layout = &physical_layout0;
     };
 
+    /* Definimos el layout físico referenciando los nombres de tu .dtsi */
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&kscan0>;
-    };    
-    /* Agregamos los alias exactos que el widget busca */
-/*    aliases {
-        led-red = &led0;
-        led-green = &led1;
-        led-blue = &led2;
-    };    
+    };
+
     leds {
         compatible = "gpio-leds";
         led0: led_0 {
