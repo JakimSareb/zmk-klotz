@@ -19,15 +19,3 @@
 &left_encoder {
 	status = "okay";
 };
-/ {
-    chosen {
-        zmk,physical-layout = &physical_layout0;
-    };
-
-    physical_layout0: physical_layout_0 {
-        compatible = "zmk,physical-layout";
-        display-name = "Default Layout";
-        transform = <&default_transform>;
-        kscan = <&kscan0>;
-    };
-};
