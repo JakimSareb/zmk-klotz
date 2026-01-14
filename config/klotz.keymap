@@ -13,21 +13,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/matrix_transform.h>
-
-/ {
-    /* FORZADO DE LAYOUT FÍSICO */
-    chosen {
-        zmk,physical-layout = &studio_layout;
-    };
-
-    studio_layout: studio_layout {
-        compatible = "zmk,physical-layout";
-        display-name = "Default";
-        transform = <&default_transform>;
-        kscan = <&kscan0>;
-    };
-};
 
 #define BASE 0
 #define NAV  1
