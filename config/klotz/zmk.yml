@@ -1,0 +1,9 @@
+config/
+  klotz/
+    boards/
+      shields/
+        klotz_left/
+          klotz_left.overlay
+        klotz_right/
+          klotz_right.overlay
+    zmk.yml
